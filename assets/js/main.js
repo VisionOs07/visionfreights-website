@@ -69,3 +69,7 @@ if(trackingInput&&trackingPrefill){trackingInput.value=trackingPrefill;}
 const quoteOrigin=params.get('origin'),quoteDestination=params.get('destination');
 if(quoteForm){if(quoteOrigin&&quoteForm.elements.origin)quoteForm.elements.origin.value=quoteOrigin;if(quoteDestination&&quoteForm.elements.destination)quoteForm.elements.destination.value=quoteDestination;}
 document.querySelectorAll('.faq-list details').forEach(item=>item.addEventListener('toggle',()=>{if(item.open){document.querySelectorAll('.faq-list details').forEach(other=>{if(other!==item)other.open=false;});}}));
+
+// V6.0 production polish
+const backToTop=document.querySelector('.back-to-top');
+if(backToTop){const updateBackTop=()=>backToTop.classList.toggle('show',window.scrollY>650);updateBackTop();window.addEventListener('scroll',updateBackTop,{passive:true});backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));}
