@@ -1,20 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 78" role="img" aria-labelledby="title desc">
-<title id="title">Vision Freight Logistics</title>
-<desc id="desc">Vision Freight Logistics corporate mark combining a forwarding arrow, route and maritime wave.</desc>
-<defs>
-  <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0A2E63"/>
-    <stop offset="1" stop-color="#1785D1"/>
-  </linearGradient>
-</defs>
-<g transform="translate(2 5)">
-  <path d="M9 7h15l13 36L51 7h15L44 67H29L9 7Z" fill="url(#mark)"/>
-  <path d="M15 57c16 7 34 7 53-1" fill="none" stroke="#1785D1" stroke-width="4.5" stroke-linecap="round"/>
-  <path d="M43 15 68 5l-8 24" fill="none" stroke="#1785D1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="68" cy="5" r="3.5" fill="#68B9E8"/>
-</g>
-<g transform="translate(88 13)">
-  <text x="0" y="27" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" letter-spacing="2" fill="#0A2E63">VISION</text>
-  <text x="1" y="51" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#1785D1">FREIGHT LOGISTICS</text>
-</g>
+  <title id="title">Vision Freight Logistics</title>
+  <desc id="desc">Vision Freight Logistics signature mark with VF, globe, ship and wave emblem.</desc>
+  <defs>
+    <linearGradient id="vf-blue" x1="8" y1="8" x2="76" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#163C86"/>
+      <stop offset="1" stop-color="#1597D4"/>
+    </linearGradient>
+    <clipPath id="globe-clip"><circle cx="39" cy="36" r="27"/></clipPath>
+  </defs>
+
+  <g transform="translate(2 2)">
+    <circle cx="39" cy="36" r="27" fill="#EAF6FC" stroke="url(#vf-blue)" stroke-width="3"/>
+    <g clip-path="url(#globe-clip)" fill="none" stroke="#52B4DF" stroke-width="1.8" opacity=".9">
+      <ellipse cx="39" cy="36" rx="13" ry="27"/>
+      <path d="M12 36h54M17 23c14 6 30 6 44 0M17 49c14-6 30-6 44 0"/>
+    </g>
+    <path d="M7 8h14l18 43L57 8h14L46 65H31L7 8Z" fill="url(#vf-blue)"/>
+    <path d="M45 10h28v10H56v11h15v10H56v24H43V18Z" fill="#0875BE"/>
+    <path d="M19 48h42l-7 8H27Z" fill="#fff"/>
+    <path d="M25 43h24l7 5H21Z" fill="#0B4C91"/>
+    <path d="M16 60c14 7 31 7 49 0M18 67c13 5 28 5 44 0" fill="none" stroke="#1597D4" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(88 13)">
+    <text x="0" y="27" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" letter-spacing="2" fill="#0A2E63">VISION</text>
+    <text x="1" y="51" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="2.4" fill="#1785D1">FREIGHT LOGISTICS</text>
+  </g>
 </svg>

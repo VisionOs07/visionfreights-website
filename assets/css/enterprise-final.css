@@ -28,6 +28,13 @@ input,select,textarea{border-radius:5px!important;border-color:#ccdbe6!important
 .tracking-dock .dock-input{flex:1 1 260px;min-width:0;max-width:360px}
 .tracking-dock .dock-input input{min-width:0}
 
+@media(min-width:901px){
+  .hero-v3-inner{justify-content:flex-start}
+  .hero-copy{width:50%;max-width:600px;padding-right:32px}
+  .hero-copy h1{font-size:clamp(48px,4.65vw,72px);max-width:100%;letter-spacing:-.05em}
+  .hero-copy>p{max-width:560px}
+}
+
 @media(max-width:900px){
   .hero-v3{padding-bottom:95px}
   .hero-v3-inner{padding-top:92px;padding-bottom:48px}
