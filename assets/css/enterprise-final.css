@@ -18,3 +18,25 @@ html{scroll-behavior:smooth} body{background:#fff;color:var(--vf-ink);letter-spa
 input,select,textarea{border-radius:5px!important;border-color:#ccdbe6!important;min-height:46px}.form-card{border:1px solid var(--vf-line)!important;border-radius:10px!important;box-shadow:0 18px 50px rgba(8,35,63,.08)!important}
 @media(max-width:900px){.hero-v3{min-height:620px}.hero-v3-inner{min-height:540px}.hero-tool-dock{grid-template-columns:1fr;margin-top:-35px}.v6-trustbar .container{grid-template-columns:1fr 1fr!important}.intro-grid{grid-template-columns:1fr;gap:24px}.nav-links{gap:12px}.section{padding:72px 0}}
 @media(max-width:620px){.hero-copy h1{font-size:47px}.hero-copy p{font-size:16px}.hero-assurance{display:grid;gap:10px}.v6-trustbar .container{grid-template-columns:1fr!important}.section{padding:58px 0}.hero-tool-dock{margin-left:18px;margin-right:18px}.topbar{display:none}.navbar{min-height:68px}}
+
+/* V6.0 Final homepage alignment fix */
+.hero-v3{padding:0 0 150px}
+.hero-tool-dock{left:auto;transform:none}
+.hero-tool-dock>*{min-width:0}
+.tracking-dock{align-items:center}
+.tracking-dock>div:first-child{flex:0 0 auto}
+.tracking-dock .dock-input{flex:1 1 260px;min-width:0;max-width:360px}
+.tracking-dock .dock-input input{min-width:0}
+
+@media(max-width:900px){
+  .hero-v3{padding-bottom:95px}
+  .hero-v3-inner{padding-top:92px;padding-bottom:48px}
+  .tracking-dock .dock-input{max-width:none}
+}
+@media(max-width:620px){
+  .hero-v3{padding-bottom:120px}
+  .hero-v3-inner{min-height:auto;padding-top:118px;padding-bottom:54px;align-items:flex-start}
+  .hero-copy h1{font-size:clamp(40px,12vw,47px);line-height:1.02;letter-spacing:-.045em}
+  .hero-tool-dock{width:auto;margin-left:14px;margin-right:14px}
+  .tracking-dock{align-items:stretch}
+}
