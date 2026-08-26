@@ -1,15 +1,21 @@
-# Vision Freight Logistics Website V6.0
+# Vision Freight Logistics Website V7.0
 
-Final production polish of the public Vision Freight Logistics website.
+Original, motion-led public website for Vision Freight Logistics. The approved logo and existing static GitHub to Cloudflare Pages architecture are preserved.
 
-## V6 focus
-- Enterprise split-hero direction inspired by global logistics UX patterns without copying any brand
-- Cleaner typography, spacing and service hierarchy
-- Existing multi-step quotation workflow preserved
-- Improved mobile layout and interaction polish
-- SEO/Open Graph/Organization schema additions
-- Back-to-top, WhatsApp, Terms and 404 page
-- No fake statistics, offices, testimonials or carrier integrations
+## Included
+
+- Animated hero and global route preview
+- Sea, air, rail, road and warehousing mode scenes
+- Existing email-based quote workflow and tracking demo
+- Responsive navigation and mobile layouts
+- Reduced-motion accessibility support
+- Lightweight HTML, CSS, SVG and JavaScript only
+- Future VisionOS integration configuration in `assets/js/v7-motion.js`
+
+## Architecture
+
+This public site remains separate from VisionOS. No live API is assumed. Future public API endpoints can be configured in `window.VisionFreightConfig` without changing page structure.
 
 ## Hosting
-Static site: no build command required. Designed for the existing GitHub → Cloudflare Pages deployment.
+
+Static site. No dependency installation or build command is required for Cloudflare Pages.

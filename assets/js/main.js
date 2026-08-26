@@ -66,8 +66,8 @@ const params=new URLSearchParams(window.location.search);
 const trackingPrefill=params.get('reference');
 const trackingInput=document.getElementById('trackingInput');
 if(trackingInput&&trackingPrefill){trackingInput.value=trackingPrefill;}
-const quoteOrigin=params.get('origin'),quoteDestination=params.get('destination');
-if(quoteForm){if(quoteOrigin&&quoteForm.elements.origin)quoteForm.elements.origin.value=quoteOrigin;if(quoteDestination&&quoteForm.elements.destination)quoteForm.elements.destination.value=quoteDestination;}
+const quoteOrigin=params.get('origin'),quoteDestination=params.get('destination'),quoteMode=params.get('mode');
+if(quoteForm){if(quoteOrigin&&quoteForm.elements.origin)quoteForm.elements.origin.value=quoteOrigin;if(quoteDestination&&quoteForm.elements.destination)quoteForm.elements.destination.value=quoteDestination;if(quoteMode&&quoteForm.elements.mode)quoteForm.elements.mode.value=quoteMode;}
 document.querySelectorAll('.faq-list details').forEach(item=>item.addEventListener('toggle',()=>{if(item.open){document.querySelectorAll('.faq-list details').forEach(other=>{if(other!==item)other.open=false;});}}));
 
 // V6.0 production polish
