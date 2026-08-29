@@ -7,10 +7,10 @@ cp -R /Users/cs25/Documents/Codex/2026-08-26/referenced-chatgpt-conversation-thi
 git status --short
 git diff --check
 git diff --stat
-git add index.html quote.html assets/js/main.js assets/js/v7-motion.js assets/css/v7-motion.css README.md DEPLOY-V7.md VERSION.txt
+git add index.html quote.html assets/js/main.js assets/js/v7-motion.js assets/css/v7-motion.css assets/images/*.webp README.md DEPLOY-V7.md VERSION.txt
 git diff --cached --check
 git diff --cached --stat
-git commit -m "Build Vision Freight Logistics V7 motion website"
+git commit -m "Upgrade V7 with professional freight photography"
 git push origin HEAD
 ```
 

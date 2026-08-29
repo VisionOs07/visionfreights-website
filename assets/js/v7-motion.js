@@ -1,7 +1,6 @@
 (() => {
   const API = Object.freeze({ baseUrl: '', quotePath: '/api/public/quotes', trackingPath: '/api/public/tracking' });
   window.VisionFreightConfig = window.VisionFreightConfig || API;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const tabs = [...document.querySelectorAll('.mode-tabs [data-mode]')];
   const stage = document.querySelector('.mode-stage');
   if (!tabs.length || !stage) return;
@@ -13,7 +12,6 @@
     warehouse: ['05 / 05','Warehousing','Storage, handling and distribution support connected to the wider freight plan.',['Short and long-term storage','Cargo handling','Dispatch coordination'],'Warehousing']
   };
   const copy = stage.querySelector('.mode-copy');
-  let timer;
   const activate = mode => {
     const data = content[mode]; if (!data) return;
     stage.dataset.activeMode = mode;
@@ -21,9 +19,15 @@
     document.querySelectorAll('.mode-scene').forEach(scene => scene.classList.toggle('active', scene.dataset.scene === mode));
     copy.innerHTML = `<span class="mode-number">${data[0]}</span><h3>${data[1]}</h3><p>${data[2]}</p><ul>${data[3].map(item => `<li>${item}</li>`).join('')}</ul><a href="quote.html?mode=${encodeURIComponent(data[4])}">Plan ${data[1].toLowerCase()} →</a>`;
   };
-  const schedule = () => { if (reduceMotion) return; clearInterval(timer); timer = setInterval(() => { const current = tabs.findIndex(tab => tab.classList.contains('active')); activate(tabs[(current + 1) % tabs.length].dataset.mode); }, 8000); };
-  tabs.forEach(tab => tab.addEventListener('click', () => { activate(tab.dataset.mode); schedule(); }));
-  schedule();
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activate(tab.dataset.mode));
+    tab.addEventListener('keydown', event => {
+      if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : (index - 1 + tabs.length) % tabs.length;
+      tabs[next].focus(); activate(tabs[next].dataset.mode);
+    });
+  });
   const params = new URLSearchParams(location.search);
   const requestedMode = params.get('mode');
   const quoteForm = document.getElementById('quoteForm');

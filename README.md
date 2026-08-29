@@ -1,11 +1,12 @@
-# Vision Freight Logistics Website V7.0
+# Vision Freight Logistics Website V7.1
 
 Original, motion-led public website for Vision Freight Logistics. The approved logo and existing static GitHub to Cloudflare Pages architecture are preserved.
 
 ## Included
 
-- Animated hero and global route preview
-- Sea, air, rail, road and warehousing mode scenes
+- Professional photographic freight hero with working quote entry
+- Photographic sea, air, rail, road and warehousing mode scenes
+- Restrained cinematic motion instead of cartoon-style animation
 - Existing email-based quote workflow and tracking demo
 - Responsive navigation and mobile layouts
 - Reduced-motion accessibility support
