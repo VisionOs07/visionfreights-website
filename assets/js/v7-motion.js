@@ -16,7 +16,16 @@
     const data = content[mode]; if (!data) return;
     stage.dataset.activeMode = mode;
     tabs.forEach(tab => { const selected = tab.dataset.mode === mode; tab.classList.toggle('active', selected); tab.setAttribute('aria-selected', String(selected)); });
-    document.querySelectorAll('.mode-scene').forEach(scene => scene.classList.toggle('active', scene.dataset.scene === mode));
+    document.querySelectorAll('.mode-scene').forEach(scene => {
+      const selected = scene.dataset.scene === mode;
+      scene.classList.toggle('active', selected);
+      const video = scene.querySelector('.mode-video');
+      if (!video) return;
+      if (selected) {
+        if (video.readyState === 0) video.load();
+        video.play().catch(() => {});
+      } else video.pause();
+    });
     copy.innerHTML = `<span class="mode-number">${data[0]}</span><h3>${data[1]}</h3><p>${data[2]}</p><ul>${data[3].map(item => `<li>${item}</li>`).join('')}</ul><a href="quote.html?mode=${encodeURIComponent(data[4])}">Plan ${data[1].toLowerCase()} →</a>`;
   };
   tabs.forEach((tab, index) => {
